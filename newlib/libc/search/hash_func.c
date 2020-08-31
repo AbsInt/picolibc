@@ -182,6 +182,7 @@ hash4(keyarg, len)
 	h = 0;
 	key = keyarg;
 	if (len > 0) {
+#ifndef __COMPCERT__
 		loop = (len + 8 - 1) >> 3;
 
 		switch (len & (8 - 1)) {
@@ -211,6 +212,11 @@ hash4(keyarg, len)
 				HASH4;
 			} while (--loop);
 		}
+#else /* __COMPCERT__ */
+        do {
+           HASH4;
+        } while (--len); 
+#endif /* __COMPCERT__ */
 	}
 	return (h);
 }

@@ -29,6 +29,11 @@
 int
 ffsll(long long i)
 {
-
+#ifdef __COMPCERT__
+    if (i == 0)
+        return 0;
+    return __builtin_ctzll((unsigned long long)i) + 1;
+#else
 	return (__builtin_ffsll(i));
+#endif
 }

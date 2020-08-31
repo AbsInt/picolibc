@@ -587,7 +587,11 @@
 	__asm__(".stabs \"_/**/sym\",1,0,0,0")
 #endif	/* __STDC__ */
 #endif	/* __ELF__ */
-#endif	/* __GNUC__ || __INTEL_COMPILER */
+#else	/* __GNUC__ || __INTEL_COMPILER */
+#ifdef __COMPCERT__
+#define	__strong_reference(sym,aliassym)
+#endif
+#endif
 
 #ifndef	__FBSDID
 #define	__FBSDID(s)	struct __hack

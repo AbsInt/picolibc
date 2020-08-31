@@ -34,7 +34,11 @@
 #ifdef __GNUC__
 #define __VALIST __gnuc_va_list
 #else
-#define __VALIST char*
+# ifndef __COMPCERT__
+#  define __VALIST char*
+# else
+#  define __VALIST va_list
+# endif
 #endif
 #endif
 

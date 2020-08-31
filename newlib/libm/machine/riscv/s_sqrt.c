@@ -36,7 +36,7 @@
 #include <math.h>
 #include "math_config.h"
 
-#if defined(__riscv_fsqrt) && __riscv_flen >= 64
+#if defined(__riscv_fsqrt) && __riscv_flen >= 64 && !defined(__COMPCERT__)
 
 double
 __ieee754_sqrt (double x)

@@ -32,6 +32,7 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrf.h"
@@ -123,3 +124,4 @@ _ctansf(float complex z)
 	} while (fabsf(t/d) > MACHEPF);
 	return d;
 }
+#endif /* __COMPCERT__ */

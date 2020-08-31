@@ -49,6 +49,7 @@ static uint32_t decimalLength9(const uint32_t v) {
 	return len;
 }
 
+#ifndef __COMPCERT__
 #define max(a, b) ({				\
 			typeof(a) _a = a;	\
 			typeof(b) _b = b;	\
@@ -58,6 +59,10 @@ static uint32_t decimalLength9(const uint32_t v) {
 			typeof(a) _a = a;	\
 			typeof(b) _b = b;	\
 			_a < _b ? _a : _b; })
+#else
+static int max(int a, int b) { return a > b ? a : b; }
+static int min(int a, int b) { return a < b ? a : b; }
+#endif
 
 // A floating decimal representing m * 10^e.
 typedef struct floating_decimal_32 {

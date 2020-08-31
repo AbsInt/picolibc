@@ -59,4 +59,9 @@ static struct __file_posix __stdout = {
 };
 
 FILE *const __posix_iob[3] = { &__stdin.cfile.file, &__stdout.cfile.file, &__stdout.cfile.file };
+
+#ifndef __COMPCERT__
 __weak_reference(__posix_iob,__iob);
+#else
+FILE *const __iob[3] = { &__stdin.cfile.file, &__stdout.cfile.file, &__stdout.cfile.file };
+#endif

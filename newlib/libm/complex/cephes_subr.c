@@ -32,6 +32,7 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subr.h"
@@ -124,3 +125,4 @@ _ctans(double complex z)
 	} while (fabs(t/d) > MACHEP);
 	return d;
 }
+#endif /* __COMPCERT__ */

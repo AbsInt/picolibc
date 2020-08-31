@@ -51,12 +51,14 @@ static inline bool use_sse(void)
 {
   unsigned int edx, eax;
 
+#ifndef __COMPCERT__
   /* Check for presence of SSE: invoke CPUID #1, check EDX bit 25.  */
   eax = 1;
   __asm__ volatile ("cpuid" : "=d" (edx), "+a" (eax) :: "%ecx", "%ebx");
   /* If this flag isn't set we'll avoid trying to execute any SSE.  */
   if ((edx & (1 << 25)) != 0)
     return true;
+#endif
 
   return false;
 }

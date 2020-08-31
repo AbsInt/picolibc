@@ -197,7 +197,7 @@ int	 strverscmp (const char *, const char *);
    #undef basename will still let you invoke the underlying function.  However,
    this also implies that the POSIX version is used in this case.  That's made
    sure here. */
-#if __GNU_VISIBLE && !defined(basename)
+#if __GNU_VISIBLE && !defined(basename) && !defined(__COMPCERT__)
 # define basename basename
 char	*__nonnull ((1)) basename (const char *) __asm__(__ASMNAME("__gnu_basename"));
 #endif

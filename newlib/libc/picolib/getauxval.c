@@ -43,4 +43,10 @@ unsigned long getauxval(unsigned long type)
 	errno = EINVAL;
 	return 0;
 }
+#ifndef __COMPCERT__
 __weak_reference(getauxval, __getauxval);
+#else
+unsigned long __getauxval(unsigned long type) {
+    return getauxval(type);
+}
+#endif

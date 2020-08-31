@@ -66,6 +66,7 @@ QUICKREF
 
 */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -78,3 +79,4 @@ conj(double complex z)
 
 	return (w.z);
 }
+#endif /* __COMPCERT__ */

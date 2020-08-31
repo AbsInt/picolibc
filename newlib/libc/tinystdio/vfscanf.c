@@ -52,7 +52,11 @@
 #elif	SCANF_LEVEL == SCANF_STD
 # define SCANF_BRACKET	1
 # define SCANF_FLOAT	0
+#ifndef __COMPCERT__
 int vfscanf (FILE * stream, const char *fmt, va_list ap) __attribute__((weak));
+#else
+int vfscanf (FILE * stream, const char *fmt, va_list ap);
+#endif
 #elif	SCANF_LEVEL == SCANF_FLT
 # define SCANF_BRACKET	1
 # define SCANF_FLOAT	1
@@ -736,7 +740,10 @@ int vfscanf (FILE * stream, const char *fmt, va_list ap)
 		do {
 		    if ((i = scanf_getc (stream, lenp)) < 0)
 			goto eof;
-		    if (addr) *(char *)addr++ = i;
+		    if (addr) {
+                *(char *)addr = i;
+                addr = (char*)addr + 1;
+            }
 		} while (--width);
 		c = 1;			/* no matter with smart GCC	*/
 
@@ -762,7 +769,11 @@ int vfscanf (FILE * stream, const char *fmt, va_list ap)
 			    scanf_ungetc (i, stream, lenp);
 			    break;
 			}
-			if (addr) *(char *)addr++ = i;
+			if (addr) {
+                *(char *)addr = i;
+                addr = (char*)addr + 1;
+            }
+
 		    } while (--width);
 		    if (addr) *(char *)addr = 0;
 		    c = 1;		/* no matter with smart GCC	*/

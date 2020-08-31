@@ -65,6 +65,7 @@ QUICKREF
 */
 
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -80,3 +81,4 @@ cexp(double complex z)
 	w = r * cos(y) + r * sin(y) * (double complex) I;
 	return w;
 }
+#endif /* __COMPCERT__ */

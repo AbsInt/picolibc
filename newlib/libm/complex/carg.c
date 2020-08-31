@@ -73,6 +73,7 @@ QUICKREF
 
 */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -82,3 +83,4 @@ carg(double complex z)
 
 	return atan2( cimag(z) , creal(z) );
 }
+#endif /* __COMPCERT__ */

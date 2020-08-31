@@ -32,6 +32,7 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -46,3 +47,4 @@ csinhf(float complex z)
 	w = sinhf(x) * cosf(y) + (coshf(x) * sinf(y)) * I;
 	return w;
 }
+#endif /* __COMPCERT__ */

@@ -32,6 +32,7 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -48,3 +49,4 @@ ctanhf(float complex z)
 
 	return w;
 }
+#endif /* __COMPCERT__ */

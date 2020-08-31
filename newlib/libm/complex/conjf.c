@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -45,3 +46,4 @@ conjf(float complex z)
 
 	return (w.z);
 }
+#endif /* __COMPCERT__ */

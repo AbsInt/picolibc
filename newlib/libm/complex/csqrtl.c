@@ -24,6 +24,7 @@
  * SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <sys/cdefs.h>
 #if 0
 __FBSDID("$FreeBSD: head/lib/msun/src/s_csqrtl.c 181402 2008-08-08 00:15:16Z das $");
@@ -110,3 +111,4 @@ csqrtl(long double complex z)
 	else
 		return (result);
 }
+#endif /* __COMPCERT__ */

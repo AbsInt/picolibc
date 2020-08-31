@@ -1,4 +1,5 @@
-/* Copyright (c) 2002, Alexander Popov (sasho@vip.bg)
+
+#undef FL_LONG/* Copyright (c) 2002, Alexander Popov (sasho@vip.bg)
    Copyright (c) 2002,2004,2005 Joerg Wunsch
    Copyright (c) 2005, Helmut Wallner
    Copyright (c) 2007, Dmitry Xmelkov
@@ -99,7 +100,7 @@ typedef unsigned long long ultoa_unsigned_t;
 typedef long long ultoa_signed_t;
 #define SIZEOF_ULTOA __SIZEOF_LONG_LONG__
 #define PRINTF_BUF_SIZE 22
-#define arg_to_t(flags, _s_)	({				\
+#define arg_to_t(flags, _s_) \
 	    _s_ long long __v__;				\
 	    if ((flags) & FL_LONG) {				\
 		if ((flags) & FL_REPD_TYPE)			\
@@ -113,15 +114,13 @@ typedef long long ultoa_signed_t;
 		    __v__ = (_s_ short) va_arg(ap, _s_ int);	\
 	    } else {						\
 		__v__ = va_arg(ap, _s_ int);			\
-	    }							\
-	    __v__;						\
-	})
+	    }
 #else
 typedef unsigned long ultoa_unsigned_t;
 typedef long ultoa_signed_t;
 #define SIZEOF_ULTOA __SIZEOF_LONG__
 #define PRINTF_BUF_SIZE 11
-#define arg_to_t(flags, _s_)	({				\
+#define arg_to_t(flags, _s_) \
 	    _s_ long __v__;					\
 	    if ((flags) & FL_LONG) {				\
 		__v__ = va_arg(ap, _s_ long);			\
@@ -129,13 +128,24 @@ typedef long ultoa_signed_t;
 		__v__ = (_s_ short) va_arg(ap, _s_ int);	\
 	    } else {						\
 		__v__ = va_arg(ap, _s_ int);			\
-	    }							\
-	    __v__;						\
-	})
+	    }
 #endif
 
-#define arg_to_unsigned(flags) arg_to_t(flags, unsigned)
-#define arg_to_signed(flags) arg_to_t(flags, signed)
+#ifndef __COMPCERT__
+#define arg_to_unsigned(flags) ({ arg_to_t(flags, unsigned); __v__; })
+#define arg_to_signed(flags) ({ arg_to_t(flags, signed); __v__; })
+#else
+#define FL_LONG 0x80
+#define FL_SHORT 0x100
+#define FL_REPD_TYPE 0x200
+static ultoa_unsigned_t _arg_to_unsigned(int flags, va_list ap) { arg_to_t(flags, unsigned); return __v__; }
+static ultoa_signed_t   _arg_to_signed  (int flags, va_list ap) { arg_to_t(flags, signed); return __v__; }
+#undef FL_LONG
+#undef FL_SHORT
+#undef FL_REPD_TYPE
+#define arg_to_unsigned(flags) _arg_to_unsigned((flags), ap)
+#define arg_to_signed(flags) _arg_to_signed((flags), ap)
+#endif
 
 #include "ultoa_invert.c"
 

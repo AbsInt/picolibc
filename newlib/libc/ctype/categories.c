@@ -11,7 +11,11 @@ struct _category {
   enum category cat: 8;
   uint_least32_t first: 24;
   uint_least16_t delta;
+#ifndef __COMPCERT__
 } __attribute__((packed));
+#else
+};
+#endif
 
 static const struct _category categories[] = {
 #include "categories.t"

@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -44,3 +45,4 @@ cexpl(long double complex z)
 	w = r * cosl(y) + r * sinl(y) * (double complex) I;
 	return w;
 }
+#endif /* __COMPCERT__ */

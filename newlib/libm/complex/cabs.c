@@ -72,7 +72,7 @@ QUICKREF
 
 */
 
-
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -82,3 +82,4 @@ cabs(double complex z)
 
 	return hypot( creal(z), cimag(z) );
 }
+#endif /* __COMPCERT__ */

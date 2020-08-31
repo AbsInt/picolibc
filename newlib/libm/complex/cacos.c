@@ -74,6 +74,7 @@ QUICKREF
 
 */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -97,3 +98,4 @@ cacos(double complex z)
 #endif
 	return w;
 }
+#endif /* __COMPCERT__ */

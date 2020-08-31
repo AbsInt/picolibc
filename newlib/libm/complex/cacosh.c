@@ -77,6 +77,7 @@ QUICKREF
 */
 
 
+#ifndef __COMPCERT__
 #include <complex.h>
 
 double complex
@@ -91,3 +92,4 @@ cacosh(double complex z)
 #endif
 	return w;
 }
+#endif /* __COMPCERT__ */

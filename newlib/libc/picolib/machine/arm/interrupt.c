@@ -157,6 +157,9 @@ __weak_vector_table(void)
 #endif
 }
 
+#ifndef __COMPCERT__
 __weak_reference(__weak_vector_table, __vector_table);
-
+#else
+void __vector_table (void) { __weak_interrupt_vector(); }
+#endif
 #endif

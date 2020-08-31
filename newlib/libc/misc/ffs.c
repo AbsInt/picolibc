@@ -55,6 +55,11 @@ No supporting OS subroutines are required.  */
 int
 ffs(int i)
 {
-
+#ifdef __COMPCERT__
+    if (i == 0)
+        return 0;
+    return __builtin_ctz((unsigned int)i) + 1;
+#else
 	return (__builtin_ffs(i));
+#endif
 }

@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrl.h"
@@ -75,3 +76,4 @@ ovrf:
 	return w;
 }
 
+#endif /* __COMPCERT__ */

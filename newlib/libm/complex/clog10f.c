@@ -1,4 +1,5 @@
 /* Copyright (c) 2016 Yaakov Selkowitz <yselkowi@redhat.com> */
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -14,3 +15,4 @@ clog10f(float complex z)
 	w = p + rr * I;
 	return w;
 }
+#endif /* __COMPCERT__ */

@@ -5,6 +5,10 @@
  * Public domain.
  */
 
+#ifdef __COMPCERT__
+#define _COMPLEX_H
+#endif
+
 #ifndef	_COMPLEX_H
 #define	_COMPLEX_H
 

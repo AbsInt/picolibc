@@ -25,6 +25,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
+#ifndef __COMPCERT__
 #include <sys/cdefs.h>
 __RCSID("$NetBSD: conjl.c,v 1.4 2010/09/20 16:55:20 christos Exp $");
 
@@ -44,3 +45,4 @@ conjl(long double complex z)
 
 	return (w.z);
 }
+#endif /* __COMPCERT__ */

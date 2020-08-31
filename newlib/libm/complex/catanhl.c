@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 
 long double complex
@@ -39,3 +40,4 @@ catanhl(long double complex z)
 	w = -1.0L * (double complex) I * catanl(z * (double complex) I);
 	return w;
 }
+#endif /* __COMPCERT__ */

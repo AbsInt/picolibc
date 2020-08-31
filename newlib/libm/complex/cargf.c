@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -42,3 +43,4 @@ cargf(float complex z)
 
 	return atan2f( cimagf(z), crealf(z) );
 }
+#endif /* __COMPCERT__ */

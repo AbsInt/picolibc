@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrl.h"
@@ -43,3 +44,4 @@ cacosl(long double complex z)
 	return w;
 }
 
+#endif /* __COMPCERT__ */

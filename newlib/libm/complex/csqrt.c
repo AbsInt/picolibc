@@ -67,6 +67,7 @@ QUICKREF
 */
 
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -135,3 +136,4 @@ csqrt(double complex z)
 		w = t + r * (double complex) I;
 	return w;
 }
+#endif /* __COMPCERT__ */

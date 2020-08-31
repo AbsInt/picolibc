@@ -65,6 +65,7 @@ QUICKREF
 */
 
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -79,3 +80,4 @@ ccosh(double complex z)
 	w = cosh(x) * cos(y) + (sinh(x) * sin(y)) * (double complex) I;
 	return w;
 }
+#endif /* __COMPCERT__ */

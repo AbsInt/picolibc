@@ -68,6 +68,7 @@ QUICKREF
 
 */
 
+#ifndef __COMPCERT__
 #include <sys/cdefs.h>
 /*__RCSID("$NetBSD: cproj.c,v 1.3 2010/09/20 17:51:38 christos Exp $"); */
 
@@ -104,3 +105,4 @@ cproj(double complex z)
 
 	return (w.z);
 }
+#endif /* __COMPCERT__ */

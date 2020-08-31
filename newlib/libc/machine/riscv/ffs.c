@@ -13,7 +13,7 @@
 int
 ffs (int word)
 {
-#if __riscv_xlen == 32
+#if __riscv_xlen == 32 && !defined(__COMPCERT__)
   return (__builtin_ffs (word));
 #else
   int i;

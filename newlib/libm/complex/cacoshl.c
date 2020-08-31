@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 
 long double complex
@@ -43,3 +44,4 @@ cacoshl(long double complex z)
 #endif
 	return w;
 }
+#endif /* __COMPCERT__ */

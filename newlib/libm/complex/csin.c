@@ -65,6 +65,7 @@ QUICKREF
 */
 
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subr.h"
@@ -79,3 +80,4 @@ csin(double complex z)
 	w = sin(creal(z)) * ch + (cos(creal(z)) * sh) * (double complex) I;
 	return w;
 }
+#endif /* __COMPCERT__ */

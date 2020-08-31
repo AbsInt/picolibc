@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrl.h"
@@ -43,3 +44,4 @@ ccosl(long double complex z)
 	w = cosl(creall(z)) * ch - (sinl(creall(z)) * sh) * (double complex) I;
 	return w;
 }
+#endif /* __COMPCERT__ */

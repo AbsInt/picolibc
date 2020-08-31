@@ -142,7 +142,11 @@ bool __malloc_grow_chunk(chunk_t *c, size_t new_size);
  * call to free.
  */
 #ifdef HAVE_ALIAS_ATTRIBUTE
+# ifndef __COMPCERT__
 extern typeof(free) __malloc_free;
+# else
+extern void __malloc_free (void*);
+# endif
 #else
 #define __malloc_free(x) free(x)
 #endif
@@ -236,7 +240,7 @@ void* __malloc_sbrk_aligned(size_t s)
      * is MALLOC_CHUNK_ALIGN aligned and the head is
      * MALLOC_HEAD_ALIGN aligned.
      */
-    align_p = ALIGN_PTR(p + MALLOC_HEAD, MALLOC_CHUNK_ALIGN) - MALLOC_HEAD;
+    align_p = (void*)((char*)(ALIGN_PTR(p + MALLOC_HEAD, MALLOC_CHUNK_ALIGN)) - (char*)(MALLOC_HEAD));
 
     if (align_p != p)
     {

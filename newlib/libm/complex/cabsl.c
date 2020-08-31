@@ -4,6 +4,7 @@
  * is freely granted, provided that this notice is preserved.
  */
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -16,3 +17,4 @@ cabsl (long double complex z)
   return hypotl (creall (z), cimagl (z));
 #endif
 }
+#endif /* __COMPCERT__ */

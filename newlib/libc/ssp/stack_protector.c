@@ -6,7 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#if defined(__AMDGCN__)
+#if defined(__AMDGCN__) || defined(__COMPCERT__)
 /* GCN does not support constructors, yet.  */
 uintptr_t __stack_chk_guard = 0x00000aff; /* 0, 0, '\n', 255  */
 

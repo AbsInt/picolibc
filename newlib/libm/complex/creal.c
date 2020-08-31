@@ -72,6 +72,7 @@ QUICKREF
 */
 
 
+#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -82,3 +83,4 @@ creal(double complex z)
 
 	return (REAL_PART(w));
 }
+#endif /* __COMPCERT__ */

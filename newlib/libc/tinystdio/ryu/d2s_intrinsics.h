@@ -30,6 +30,10 @@
 #define HAS_64_BIT_INTRINSICS
 #endif
 
+#ifdef __COMPCERT__
+#undef HAS_UINT128
+#endif
+
 #if defined(HAS_UINT128)
 typedef __uint128_t uint128_t;
 #endif

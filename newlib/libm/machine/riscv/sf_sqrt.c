@@ -36,7 +36,7 @@
 #include <math.h>
 #include "math_config.h"
 
-#if defined(__riscv_fsqrt) && __riscv_flen >= 32
+#if defined(__riscv_fsqrt) && __riscv_flen >= 32 && !defined(__COMPCERT__)
 
 float
 __ieee754_sqrtf (float x)
