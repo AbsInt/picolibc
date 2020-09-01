@@ -42,7 +42,10 @@ _set_tls(void *tls)
 #include "../../crt0.h"
 #include <sys/cdefs.h>
 
-static void __attribute((used))
+#ifndef __COMPCERT__
+static
+#endif
+void __attribute((used))
 _cstart(void)
 {
 	asm(".option push\n.option norelax\nla gp, __global_pointer$\n.option pop");

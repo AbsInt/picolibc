@@ -1,0 +1,17 @@
+[binaries]
+c = 'ccomp'
+as = 'ccomp'
+exe_wrapper = ['sh', '-c', 'test -z "$MESON_SOURCE_ROOT" || "$MESON_SOURCE_ROOT"/scripts/run-rv32imac "$@"', 'run-rv32imac']
+
+[host_machine]
+system = 'unknown'
+cpu_family = 'riscv'
+cpu = 'riscv32'
+endian = 'little'
+
+[properties]
+#c_args = [ '-nostdlib', '-msave-restore', '-march=rv32imac', '-mabi=ilp32']
+c_args = [ '-nostdlib', '-fno-common', '-target', 'rv32-linux', '-fall' ]
+c_link_args = [ '-target', 'rv32-linux' ]
+needs_exe_wrapper = true
+skip_sanity_check = true
