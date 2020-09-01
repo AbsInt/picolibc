@@ -78,7 +78,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 
 double complex
@@ -89,4 +88,3 @@ catanh(double complex z)
 	w = -1.0 * (double complex) I * catan(z * (double complex) I);
 	return w;
 }
-#endif /* __COMPCERT__ */

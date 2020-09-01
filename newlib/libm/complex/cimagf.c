@@ -33,7 +33,6 @@ POSSIBILITY OF SUCH DAMAGE.
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -44,4 +43,3 @@ cimagf(float complex z)
 
 	return (IMAG_PART(w));
 }
-#endif /* __COMPCERT__ */

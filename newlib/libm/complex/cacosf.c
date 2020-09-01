@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -45,4 +44,3 @@ cacosf(float complex z)
 	w = ((float)M_PI_2 - crealf(w)) - cimagf(w) * I;
 	return w;
 }
-#endif /* __COMPCERT__ */

@@ -29,7 +29,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -55,4 +54,3 @@ cpowl(long double complex a, long double complex z)
 	w = r * cosl(theta) + (r * sinl(theta)) * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

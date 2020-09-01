@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 
 float complex
@@ -43,4 +42,3 @@ catanhf(float complex z)
 	w = -1.0f * I * catanf(z * I);
 	return w;
 }
-#endif /* __COMPCERT__ */

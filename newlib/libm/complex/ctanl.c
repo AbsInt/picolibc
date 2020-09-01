@@ -30,7 +30,6 @@
  */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrl.h"
@@ -55,4 +54,3 @@ ctanl(long double complex z)
 	w = sinl(2.0L * creall(z)) / d + (sinhl(2.0L * cimagl(z)) / d) * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

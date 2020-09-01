@@ -4,7 +4,6 @@
  * is freely granted, provided that this notice is preserved.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -15,4 +14,3 @@ cimagl (long double complex z)
 
   return IMAG_PART (w);
 }
-#endif /* __COMPCERT__ */

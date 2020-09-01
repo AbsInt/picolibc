@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -48,4 +47,3 @@ clogf(float complex z)
 	w = p + rr * I;
 	return w;
 }
-#endif /* __COMPCERT__ */

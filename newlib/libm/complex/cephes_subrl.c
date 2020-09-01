@@ -29,7 +29,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrl.h"
@@ -127,4 +126,3 @@ _ctansl(long double complex z)
 	} while (fabsl(t/d) > MACHEPL);
 	return d;
 }
-#endif /* __COMPCERT__ */

@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -121,4 +120,3 @@ return;
 	w = zz * (-1.0f * I);
 	return w;
 }
-#endif /* __COMPCERT__ */

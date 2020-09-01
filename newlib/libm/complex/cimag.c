@@ -72,7 +72,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -83,4 +82,3 @@ cimag(double complex z)
 
 	return (IMAG_PART(w));
 }
-#endif /* __COMPCERT__ */

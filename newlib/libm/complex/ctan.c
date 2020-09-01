@@ -65,7 +65,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subr.h"
@@ -90,4 +89,3 @@ ctan(double complex z)
 	w = sin(2.0 * creal(z)) / d + (sinh(2.0 * cimag(z)) / d) * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

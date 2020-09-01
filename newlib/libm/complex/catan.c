@@ -83,7 +83,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subr.h"
@@ -129,4 +128,3 @@ ovrf:
 	w = HUGE_VAL + HUGE_VAL * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

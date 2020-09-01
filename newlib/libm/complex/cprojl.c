@@ -25,7 +25,6 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#ifndef __COMPCERT__
 #include <sys/cdefs.h>
 __RCSID("$NetBSD: cprojl.c,v 1.7 2014/10/10 00:48:18 christos Exp $");
 
@@ -63,4 +62,3 @@ cprojl(long double complex z)
 
 	return (w.z);
 }
-#endif /* __COMPCERT__ */

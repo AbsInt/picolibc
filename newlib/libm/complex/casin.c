@@ -75,7 +75,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -164,4 +163,3 @@ return;
 	w = zz * (-1.0 * (double complex) I);
 	return w;
 }
-#endif /* __COMPCERT__ */

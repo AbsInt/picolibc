@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrf.h"
@@ -47,4 +46,3 @@ ccosf(float complex z)
 	w = cosf(crealf(z)) * ch - (sinf(crealf(z)) * sh) * I;
 	return w;
 }
-#endif /* __COMPCERT__ */

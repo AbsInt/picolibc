@@ -74,7 +74,6 @@ QUICKREF
 
 */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -90,4 +89,3 @@ clog(double complex z)
 	w = p + rr * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -58,4 +57,3 @@ cpowf(float complex a, float complex z)
 	w = r * cosf(theta) + (r * sinf(theta)) * I;
 	return w;
 }
-#endif /* __COMPCERT__ */

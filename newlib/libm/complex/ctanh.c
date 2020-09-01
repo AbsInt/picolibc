@@ -65,7 +65,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -82,4 +81,3 @@ ctanh(double complex z)
 
 	return w;
 }
-#endif /* __COMPCERT__ */

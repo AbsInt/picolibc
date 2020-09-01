@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrf.h"
@@ -57,4 +56,3 @@ ctanf(float complex z)
 	w = sinf(2.0f * crealf(z)) / d + (sinhf(2.0f * cimagf(z)) / d) * I;
 	return w;
 }
-#endif /* __COMPCERT__ */

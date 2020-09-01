@@ -4,7 +4,6 @@
  * is freely granted, provided that this notice is preserved.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include "../common/fdlibm.h"
 
@@ -15,4 +14,3 @@ creall (long double complex z)
 
   return (REAL_PART(w));
 }
-#endif /* __COMPCERT__ */

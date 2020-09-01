@@ -29,7 +29,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -45,4 +44,3 @@ clogl(long double complex z)
 	w = p + rr * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

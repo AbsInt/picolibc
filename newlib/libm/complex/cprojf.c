@@ -29,7 +29,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <sys/cdefs.h>
 /*__RCSID("$NetBSD: cprojf.c,v 1.3 2010/09/20 17:51:38 christos Exp $"); */
 
@@ -67,4 +66,3 @@ cprojf(float complex z)
 
 	return (w.z);
 }
-#endif /* __COMPCERT__ */

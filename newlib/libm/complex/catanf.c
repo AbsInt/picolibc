@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 #include "cephes_subrf.h"
@@ -78,4 +77,3 @@ ovrf:
 	w = HUGE_VALF + HUGE_VALF * I;
 	return w;
 }
-#endif /* __COMPCERT__ */

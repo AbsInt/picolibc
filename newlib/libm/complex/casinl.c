@@ -29,7 +29,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -119,4 +118,3 @@ return;
 	return w;
 }
 
-#endif /* __COMPCERT__ */

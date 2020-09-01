@@ -29,7 +29,6 @@ POSSIBILITY OF SUCH DAMAGE.
  * Public domain.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -42,4 +41,3 @@ cargl(long double complex z)
          return atan2l (cimagl (z), creall (z));
        #endif
 }
-#endif /* __COMPCERT__ */

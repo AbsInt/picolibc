@@ -32,7 +32,6 @@
  * Marco Atzeri <marco_atzeri@yahoo.it>
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 
 float complex
@@ -47,4 +46,3 @@ cacoshf(float complex z)
 #endif
 	return w;
 }
-#endif /* __COMPCERT__ */

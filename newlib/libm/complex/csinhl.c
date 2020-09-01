@@ -29,7 +29,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -44,4 +43,3 @@ csinhl(long double complex z)
 	w = sinhl(x) * cosl(y) + (coshl(x) * sinl(y)) * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */

@@ -74,7 +74,6 @@ QUICKREF
 */
 
 
-#ifndef __COMPCERT__
 #include <complex.h>
 #include <math.h>
 
@@ -100,4 +99,3 @@ cpow(double complex a, double complex z)
 	w = r * cos(theta) + (r * sin(theta)) * (double complex) I;
 	return w;
 }
-#endif /* __COMPCERT__ */
