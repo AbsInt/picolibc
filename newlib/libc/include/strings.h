@@ -36,7 +36,7 @@
 #include <sys/_locale.h>
 #endif
 
-#if defined(_SIZE_T_DECLARED) && !defined(__COMPCERT__)
+#if !defined(_SIZE_T_DECLARED) && !defined(__COMPCERT__)
 typedef	__size_t	size_t;
 #define	_SIZE_T_DECLARED
 #endif
