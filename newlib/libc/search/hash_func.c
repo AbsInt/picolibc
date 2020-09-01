@@ -182,41 +182,9 @@ hash4(keyarg, len)
 	h = 0;
 	key = keyarg;
 	if (len > 0) {
-#ifndef __COMPCERT__
-		loop = (len + 8 - 1) >> 3;
-
-		switch (len & (8 - 1)) {
-		case 0:
-			do {
-				HASH4;
-				/* FALLTHROUGH */
-		case 7:
-				HASH4;
-				/* FALLTHROUGH */
-		case 6:
-				HASH4;
-				/* FALLTHROUGH */
-		case 5:
-				HASH4;
-				/* FALLTHROUGH */
-		case 4:
-				HASH4;
-				/* FALLTHROUGH */
-		case 3:
-				HASH4;
-				/* FALLTHROUGH */
-		case 2:
-				HASH4;
-				/* FALLTHROUGH */
-		case 1:
-				HASH4;
-			} while (--loop);
-		}
-#else /* __COMPCERT__ */
         do {
            HASH4;
         } while (--len); 
-#endif /* __COMPCERT__ */
 	}
 	return (h);
 }
