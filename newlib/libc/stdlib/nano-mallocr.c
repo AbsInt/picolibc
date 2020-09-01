@@ -454,6 +454,7 @@ void cfree(void * ptr)
 #endif /* DEFINE_CFREE */
 
 #ifdef DEFINE_CALLOC
+#include "mul_overflow.h"
 
 /* Function calloc
  *
@@ -465,7 +466,7 @@ void * calloc(size_t n, size_t elem)
 {
     size_t bytes;
 
-    if (__builtin_mul_overflow (n, elem, &bytes))
+    if (mul_overflow (n, elem, &bytes))
     {
         errno = ENOMEM;
         return NULL;

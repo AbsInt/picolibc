@@ -42,14 +42,6 @@ extern "C" {
 /* Is this CompCert */
 #ifdef __COMPCERT__
 #define _DEFAULT_SOURCE
-static int __builtin_mul_overflow(a, b, res)
-    unsigned long long a;
-    unsigned long long b;
-    unsigned long long *res;
-{
-    *res = a * b;
-    return 0;
-}
 #define __builtin_expect(cond, exp) (cond)
 #define __section(_S_) __attribute__((section(_S_)))
 #endif
