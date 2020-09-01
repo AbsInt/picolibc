@@ -588,9 +588,6 @@
 #endif	/* __STDC__ */
 #endif	/* __ELF__ */
 #else	/* __GNUC__ || __INTEL_COMPILER */
-#ifdef __COMPCERT__
-#define	__strong_reference(sym,aliassym)
-#endif
 #endif
 
 #ifndef	__FBSDID
