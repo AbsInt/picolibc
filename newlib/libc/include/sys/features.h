@@ -42,7 +42,6 @@ extern "C" {
 /* Is this CompCert */
 #ifdef __COMPCERT__
 #define _DEFAULT_SOURCE
-#define __builtin_expect(cond, exp) (cond)
 #endif
 
 /*
