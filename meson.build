@@ -487,6 +487,10 @@ if not have_builtin_expect
   conf_data.set('__builtin_expect(cond, exp)', '(cond)', description: 'Compiler does not have __builtin_expect')
 endif
 
+if meson.get_compiler('c').get_id() == 'ccomp'
+  conf_data.set('_DEFAULT_SOURCE', 1, description: 'CompCert should be handled like this')
+endif
+
 if newlib_obsolete_math == 'auto'
   obsolete_math_value = false
 elif newlib_obsolete_math == 'true'
