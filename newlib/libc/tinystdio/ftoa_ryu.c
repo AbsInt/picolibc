@@ -49,21 +49,6 @@ static uint32_t decimalLength9(const uint32_t v) {
 	return len;
 }
 
-#ifndef __COMPCERT__
-#define max(a, b) ({				\
-			typeof(a) _a = a;	\
-			typeof(b) _b = b;	\
-			_a > _b ? _a : _b; })
-
-#define min(a, b) ({				\
-			typeof(a) _a = a;	\
-			typeof(b) _b = b;	\
-			_a < _b ? _a : _b; })
-#else
-static int max(int a, int b) { return a > b ? a : b; }
-static int min(int a, int b) { return a < b ? a : b; }
-#endif
-
 // A floating decimal representing m * 10^e.
 typedef struct floating_decimal_32 {
 	uint32_t mantissa;
@@ -222,7 +207,7 @@ f2d(const uint32_t ieeeMantissa, const uint32_t ieeeExponent, int max_digits, in
 		 * cases, which is kinda cool
 		 */
 		/* max_decimals comes in biased by 1 to flag the 'f' case */
-		max_digits = min(max_digits, max(0, max_decimals - 1 + exp + 1));
+		max_digits = min_int(max_digits, max_int(0, max_decimals - 1 + exp + 1));
 	}
 
 	for (;;) {
@@ -285,7 +270,7 @@ f2d(const uint32_t ieeeMantissa, const uint32_t ieeeExponent, int max_digits, in
 			if(max_decimals != 0) {
 				int exp = e10 + len - 1;
 				/* max_decimals comes in biased by 1 to flag the 'f' case */
-				max_digits = min(save_max_digits, max(0, max_decimals - 1 + exp + 1));
+				max_digits = min_int(save_max_digits, max_int(0, max_decimals - 1 + exp + 1));
 			}
 
 			if (len > max_digits) {
