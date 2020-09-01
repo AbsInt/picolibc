@@ -335,6 +335,12 @@ unsigned int foobar (const struct test *p) { return p->part; }
 '''
 have_bitfields_in_packed_structs = meson.get_compiler('c').compiles(bitfields_in_packed_structs_code, name : 'packed structs may contain bitfields')
 
+# CompCert does not support _Complex
+complex_code = '''
+float _Complex test(float _Complex z) { return z; }
+'''
+have_complex = meson.get_compiler('c').compiles(complex_code, name : 'supports _Complex')
+
 if enable_multilib
   used_libs = []
 
@@ -465,6 +471,7 @@ conf_data.set('POSIX_IO', posix_io, description: 'Use open/close/read/write in t
 conf_data.set('POSIX_CONSOLE', posix_console, description: 'Use POSIX I/O for stdin, stdout and stderr')
 conf_data.set('ATOMIC_UNGETC', atomic_ungetc, description: 'Use atomics for fgetc/ungetc for re-entrancy')
 conf_data.set('HAVE_BITFIELDS_IN_PACKED_STRUCTS', have_bitfields_in_packed_structs, description: 'Use bitfields in packed structs')
+conf_data.set('HAVE_COMPLEX', have_complex, description: 'Support for _Complex')
 
 if newlib_obsolete_math == 'auto'
   obsolete_math_value = false
