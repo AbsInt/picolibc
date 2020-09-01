@@ -54,7 +54,6 @@ static int __builtin_mul_overflow(a, b, res)
 #define __builtin_expect(cond, exp) (cond)
 #define __section(_S_) __attribute__((section(_S_)))
 #else
-#define _ATTR_PACKED __attribute__((packed))
 #define _ENUM_PACKED __packed
 #endif
 
