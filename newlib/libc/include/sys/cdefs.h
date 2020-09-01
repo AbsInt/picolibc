@@ -250,7 +250,8 @@
 #define	__aligned(x)	__attribute__((__aligned__(x)))
 #define	__section(x)	__attribute__((__section__(x)))
 #endif
-#if __GNUC_PREREQ__(4, 3) || __has_attribute(__alloc_size__)
+#if __GNUC_PREREQ__(4, 3) || (__has_attribute(__alloc_size__) && !defined(__COMPCERT__))
+// CompCert uses the GCC preprocessor - which thinks that the compiler has __alloc_size__
 #define	__alloc_size(x)	__attribute__((__alloc_size__(x)))
 #define	__alloc_size2(n, x)	__attribute__((__alloc_size__(n, x)))
 #else
