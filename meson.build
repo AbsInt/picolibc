@@ -464,12 +464,7 @@ conf_data.set('PICOLIBC_TLS', thread_local_storage, description: 'use thread loc
 conf_data.set('POSIX_IO', posix_io, description: 'Use open/close/read/write in tinystdio')
 conf_data.set('POSIX_CONSOLE', posix_console, description: 'Use POSIX I/O for stdin, stdout and stderr')
 conf_data.set('ATOMIC_UNGETC', atomic_ungetc, description: 'Use atomics for fgetc/ungetc for re-entrancy')
-<<<<<<< HEAD
-=======
-conf_data.set('HAVE_BITFIELDS_IN_PACKED_STRUCTS', have_bitfields_in_packed_structs, description: 'Use bitfields in packed structs')
-conf_data.set('HAVE_COMPLEX', have_complex, description: 'Support for _Complex')
 conf_data.set('HAVE_BUILTIN_MUL', have_builtin_mul_overflow, description: 'Compiler has __builtin_mul_overflow')
->>>>>>> 8d67c315b... Check for presence of __builtin_mul_overflow
 
 if newlib_obsolete_math == 'auto'
   obsolete_math_value = false
