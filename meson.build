@@ -328,21 +328,6 @@ if have_long_double
   long_double_equals_double = meson.get_compiler('c').compiles(long_double_size_code, name : 'long double same as double')
 endif
 
-<<<<<<< HEAD
-=======
-# CompCert does not support bitfields in packed structs, so avoid using this optimization
-bitfields_in_packed_structs_code = '''
-struct test { int part: 24; } __attribute__((packed));
-unsigned int foobar (const struct test *p) { return p->part; }
-'''
-have_bitfields_in_packed_structs = meson.get_compiler('c').compiles(bitfields_in_packed_structs_code, name : 'packed structs may contain bitfields')
-
-# CompCert does not support _Complex
-complex_code = '''
-float _Complex test(float _Complex z) { return z; }
-'''
-have_complex = meson.get_compiler('c').compiles(complex_code, name : 'supports _Complex')
-
 # CompCert does not have __builtin_mul_overflow
 builtin_mul_overflow_code = '''
 #include <stddef.h>
@@ -350,7 +335,6 @@ int overflows (size_t a, size_t b) { size_t x; return __builtin_mul_overflow(a, 
 '''
 have_builtin_mul_overflow = meson.get_compiler('c').compiles(builtin_mul_overflow_code, name : 'has __builtin_mul_overflow')
 
->>>>>>> 8d67c315b... Check for presence of __builtin_mul_overflow
 if enable_multilib
   used_libs = []
 
