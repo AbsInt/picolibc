@@ -305,7 +305,7 @@ void __sinit_lock_release (void);
 /* Types used in positional argument support in vfprinf/vfwprintf.
    The implementation is char/wchar_t dependent but the class and state
    tables are only defined once in vfprintf.c. */
-typedef enum _ENUM_PACKED {
+typedef enum __packed {
   ZERO,   /* '0' */
   DIGIT,  /* '1-9' */
   DOLLAR, /* '$' */
@@ -318,7 +318,7 @@ typedef enum _ENUM_PACKED {
   MAX_CH_CLASS /* place-holder */
 } __CH_CLASS;
 
-typedef enum _ENUM_PACKED {
+typedef enum __packed {
   START,  /* start */
   SFLAG,  /* seen a flag */
   WDIG,   /* seen digits in width area */
@@ -334,7 +334,7 @@ typedef enum _ENUM_PACKED {
   MAX_STATE, /* place-holder */
 } __STATE;
 
-typedef enum _ENUM_PACKED {
+typedef enum __packed {
   NOOP,  /* do nothing */
   NUMBER, /* build a number from digits */
   SKIPNUM, /* skip over digits */

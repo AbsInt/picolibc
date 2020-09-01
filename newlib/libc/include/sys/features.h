@@ -42,7 +42,6 @@ extern "C" {
 /* Is this CompCert */
 #ifdef __COMPCERT__
 #define _DEFAULT_SOURCE
-#define _ENUM_PACKED
 static int __builtin_mul_overflow(a, b, res)
     unsigned long long a;
     unsigned long long b;
@@ -53,8 +52,6 @@ static int __builtin_mul_overflow(a, b, res)
 }
 #define __builtin_expect(cond, exp) (cond)
 #define __section(_S_) __attribute__((section(_S_)))
-#else
-#define _ENUM_PACKED __packed
 #endif
 
 /*
