@@ -243,6 +243,8 @@
 #define	__dead2		__attribute__((__noreturn__))
 #define	__pure2		__attribute__((__const__))
 #define	__unused	__attribute__((__unused__))
+#endif
+#if __GNUC_PREREQ__(2, 7) || defined(__INTEL_COMPILER) || defined(__COMPCERT__)
 #define	__used		__attribute__((__used__))
 #define	__packed	__attribute__((__packed__))
 #define	__aligned(x)	__attribute__((__aligned__(x)))

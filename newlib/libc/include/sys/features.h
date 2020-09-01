@@ -43,7 +43,6 @@ extern "C" {
 #ifdef __COMPCERT__
 #define _DEFAULT_SOURCE
 #define __builtin_expect(cond, exp) (cond)
-#define __section(_S_) __attribute__((section(_S_)))
 #endif
 
 /*
