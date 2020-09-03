@@ -43,9 +43,13 @@ __strong_reference(__ieee754_sqrtf, sqrtf);
 float
 __ieee754_sqrtf (float x)
 {
+#ifdef HAVE_BUILTIN_SQRT
+	return __builtin_sqrtf(x);
+#else
 	float result;
 	asm ("fsqrt.s %0, %1" : "=f" (result) : "f" (x));
 	return result;
+#endif
 }
 
 #else

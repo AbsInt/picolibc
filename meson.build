@@ -344,6 +344,15 @@ unsigned int foobar (const struct test *p) { return p->part; }
 '''
 have_bitfields_in_packed_structs = meson.get_compiler('c').compiles(bitfields_in_packed_structs_code, name : 'packed structs may contain bitfields')
 
+# Check if the target has both __builtin_sqrt and __builtin_sqrtf; only really used by RISC-V
+builtin_sqrt_code = '''
+int main (void)
+{
+  return __builtin_sqrt(2.0) == __builtin_sqrtf((float)2.0);
+}
+'''
+have_builtin_sqrt = meson.get_compiler('c').links(builtin_sqrt_code, name : 'have __builtin_sqrt and __builtin_sqrtf')
+
 if enable_multilib
   used_libs = []
 
@@ -474,6 +483,7 @@ conf_data.set('POSIX_IO', posix_io, description: 'Use open/close/read/write in t
 conf_data.set('POSIX_CONSOLE', posix_console, description: 'Use POSIX I/O for stdin, stdout and stderr')
 conf_data.set('ATOMIC_UNGETC', atomic_ungetc, description: 'Use atomics for fgetc/ungetc for re-entrancy')
 conf_data.set('HAVE_BITFIELDS_IN_PACKED_STRUCTS', have_bitfields_in_packed_structs, description: 'Use bitfields in packed structs')
+conf_data.set('HAVE_BUILTIN_SQRT', have_builtin_sqrt, description: 'Use __builtin_sqrt and __builtin_fsqrt where applicable')
 
 if newlib_obsolete_math == 'auto'
   obsolete_math_value = false
